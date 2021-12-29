@@ -21,7 +21,7 @@
                                         prodi = '$_POST[tprodi]',
                                         jk = '$_POST[tjeniskelamin]',
                                         umur = '$_POST[tumur]',
-                                        nama_ayah = '$_POST[tnama_ayah]'
+                                       nama_ayah = '$_POST[tnama_ayah]'
                                       WHERE no = '$_GET[id]'
                                      ");
 
