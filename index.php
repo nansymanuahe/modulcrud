@@ -20,19 +20,22 @@
                                         alamat = '$_POST[talamat]',
                                         prodi = '$_POST[tprodi]',
                                         jk = '$_POST[tjeniskelamin]',
-                                        umur = '$_POST[tumur]'
+                                        umur = '$_POST[tumur]',
+                                        nama_ayah = '$_POST[tnama_ayah]'
                                       WHERE no = '$_GET[id]'
                                      ");
+
+
     if ($edit) // jika edit sukses
       {echo "<script>
-              alert('edit Data Sukses!');
+              alert('Edit Data Sukses!');
               document.location = 'index.php';
             </script>";
       }
       else
       {
         echo "<script>
-              alert('edit Data Gagal!');
+              alert('Edit Data Gagal!');
               document.location = 'index.php';
             </script>";
       }
@@ -45,7 +48,8 @@
                                             '$_POST[talamat]', 
                                             '$_POST[tprodi]', 
                                             '$_POST[tjeniskelamin]', 
-                                            '$_POST[tumur]')
+                                            '$_POST[tumur]',
+                                            '$_POST[tnama_ayah]')
                                      ");
     if ($simpan) // jika simpan sukses
       {echo "<script>
@@ -81,8 +85,11 @@
         $vprodi = $data['prodi'];
         $vjeniskelamin = $data['jk'];
         $vumur = $data['umur'];
+        $vnama_ayah = $data['nama_ayah'];
       }
     }
+
+
     if($_GET['hal'] == "hapus")
     {
       //Persiapan Hapus Data
@@ -166,6 +173,12 @@
         <input type="text" name="tumur" value="<?=@$vumur?>" class="form-control" placeholder="Input Umur Anda Di Sini!" required>
       </div>
 
+  <div class="form-group">
+        <label>Nama Ayah</label>
+        <input type="text" name="tnama_ayah" value="<?=@$vnama_ayah?>" class="form-control" placeholder="Input Nama Ayah Anda Di Sini!" required>
+      </div>
+
+
       </div>
 
       <button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
@@ -191,6 +204,7 @@
         <th>Program Studi</th>
         <th>Jenis Kelamin</th>
         <th>Umur</th>
+        <th>Nama Ayah</th>
         <th>Aksi</th>
       </tr>
       <?php
@@ -207,6 +221,7 @@
         <td><?=$data['prodi']?></td>
         <td><?=$data['jk']?></td>
         <td><?=$data['umur']?></td>
+        <td><?=$data['nama_ayah']?></td>
         <td>
           <a href="index.php?hal=edit&id=<?=$data['no']?>" class="btn btn-success"> Edit </a>
           <a href="index.php?hal=hapus&id=<?=$data['no']?>" 
