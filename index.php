@@ -102,13 +102,7 @@
             </script>";
       }
       }
-      else
-      {
-        echo "<script>
-              alert('hapus Data Gagal!');
-              document.location = 'index.php';
-            </script>";
-      }
+      
     }
 
 
