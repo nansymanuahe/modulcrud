@@ -10,6 +10,6 @@
 
 
 
-mysqli_
+mysqli_set_charset($koneksi, "utf8");
 
 ?>
