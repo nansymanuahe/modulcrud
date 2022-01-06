@@ -1,11 +1,11 @@
 <?php
   //koneksi Database
-  $server  = "localhost";
-  $user = "root";
-  $password = "";
+  $server  = "db4free.net";
+  $user = "nansyymanuahe";
+  $password = "041101NansyManuahe";
   $database = "crudtona";
 
-  $koneksi = mysqli_connect($server, $user, $password, $database) or die (mysqli_error($koneksi));
+  $koneksi = 'mysqli_connect()($server, $user, $password, $database) or die($koneksi)';
 
   //jika tombol simpan di klik
   if(isset($_POST['bsimpan']))
@@ -202,9 +202,9 @@
         <th>Aksi</th>
       </tr>
       <?php
-          $no=1;
+          $no = 1
           $tampil = mysqli_query($koneksi, "select * from crudnansy order by no asc");
-          while ($data = mysqli_fetch_array($tampil)):
+          while ($tampil = mysqli_fetch_array($data));
 
       ?>
       <tr>
@@ -220,12 +220,12 @@
           <a href="index.php?hal=edit&id=<?=$data['no']?>" class="btn btn-success"> Edit </a>
           <a href="index.php?hal=hapus&id=<?=$data['no']?>" 
             onclick ="return confirm('Apakah Yakin Data ini akan dihapus?')" class="btn btn-danger"> Hapus </a>
-        </td>
+      
 
       </tr>
-    <?php endwhile; // penutup perulangan while?>
+    <?php 
+    ?>
     </table>
-
   </div>
 </div>
 <!-- Akhir Card Tabel -->
